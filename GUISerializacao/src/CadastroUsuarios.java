@@ -3,6 +3,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,12 +56,12 @@ public class CadastroUsuarios extends JFrame {
         File arquivo = new File("dados.txt");
         if (arquivo.exists()) {
             usuarios = Serializacao.deserializar("dados.txt");
-            atualizarTabela();
+            abrirCadastro();
         } 
 
-        table.addMouseListener(new java.awt.event.MouseAdapter() {
+        table.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseClicked(MouseEvent evt) {
                 linhaSelecionada = table.rowAtPoint(evt.getPoint());
                 if (linhaSelecionada != -1) {
                     inputNome.setText((String) table.getValueAt(linhaSelecionada, 0));
@@ -108,7 +110,7 @@ public class CadastroUsuarios extends JFrame {
         });
     }
 
-    private void atualizarTabela() {
+    private void abrirCadastro() {
         tableModel.setRowCount(0);
         for (Usuario usuario : usuarios) {
             tableModel.addRow(new Object[] { usuario.getNome(), usuario.getIdade() });
