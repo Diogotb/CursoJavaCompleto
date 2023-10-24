@@ -8,7 +8,7 @@ public class App {
             @Override
             public void run() {
                 // Cria uma instância da classe CadastroUsuarios, que é a classe principal da aplicação.
-                CadastroUsuarios app = new CadastroUsuarios();
+                MainFrame app = new MainFrame();
                 app.pack();
                 // Torna a janela da aplicação visível para o usuário.
                 app.setVisible(true);

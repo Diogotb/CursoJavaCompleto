@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CadastroUsuarios extends JFrame {
+public class CadastroUsuarios extends JPanel {
     private JTextField inputNome;
     private JTextField inputIdade;
     private DefaultTableModel tableModel;
@@ -18,11 +18,7 @@ public class CadastroUsuarios extends JFrame {
     private int linhaSelecionada = -1;
 
     public CadastroUsuarios() {
-        setTitle("Cadastro de Usuários");
-        setSize(600, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-
+        
         tableModel = new DefaultTableModel();
         tableModel.addColumn("Nome");
         tableModel.addColumn("Idade");
