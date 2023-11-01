@@ -1,3 +1,4 @@
+package Model;
 public class Carro {
     String marca;
     String modelo;
